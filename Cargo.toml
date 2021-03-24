@@ -1,15 +1,15 @@
 [package]
 name = "rustcord"
-version = "0.2.4"
-authors = ["AregevDev <aregevdev@gmail.com>"]
+version = "0.2.5"
+authors = ["AregevDev <aregevdev@gmail.com>", "elenawinters <elenamaywinters@gmail.com>"]
 edition = "2018"
 description = "A safe wrapper around the Discord Rich Presence API"
 keywords = ["discord", "rpc"]
-repository = "https://github.com/AregevDev/rustcord"
+repository = "https://github.com/elenawinters/rustcord"
 categories = ["api-bindings"]
 license = "Apache-2.0"
 readme = "README.md"
 
 [dependencies]
 libc = "0.2.66"
-rustcord-sys = { path = "rustcord-sys", version = "0.2.4" }
+rustcord-sys = { path = "rustcord-sys", version = "0.2.5" }

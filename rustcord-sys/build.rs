@@ -4,12 +4,18 @@ use std::path::PathBuf;
 const LIB_VERSION: &str = "3.4.0";
 
 fn main() {
-    let config = cmake::Config::new("discord-rpc".to_string())
+    let dst = cmake::Config::new("discord-rpc")
         .define("BUILD_EXAMPLES", "OFF")
         .build();
 
-    println!("cargo:rustc-link-search={}", config.join("lib").display());
-    println!("cargo:rustc-link-search={}", config.join("lib64").display());
+    println!(
+        "cargo:rustc-link-search={}",
+        dst.join("lib").display()
+    );
+    println!(
+        "cargo:rustc-link-search={}",
+        dst.join("lib64").display()
+    );
 
     let include_path = format!("discord-rpc-{}/include", LIB_VERSION);
 
@@ -25,4 +31,5 @@ fn main() {
         .expect("Couldn't write bindings!");
 
     println!("cargo:rustc-link-lib=static=discord-rpc");
+
 }
